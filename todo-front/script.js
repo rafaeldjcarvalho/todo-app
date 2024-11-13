@@ -9,8 +9,8 @@ async function fetchTasks() {
     tasks.forEach(task => {
         const li = document.createElement("li");
         li.innerHTML = `
-            ${task.name} - ${task.completed ? 'Done' : 'Pending'}
-            <button onclick="deleteTask(${task.id})">Delete</button>
+            <span>${task.name} - ${task.completed ? 'Done' : 'Pending'}</span>
+            <button class="delete" onclick="deleteTask(${task.id})">Delete</button>
             <button onclick="toggleTask(${task.id}, ${!task.completed})">
                 ${task.completed ? 'Mark as Pending' : 'Mark as Done'}
             </button>
